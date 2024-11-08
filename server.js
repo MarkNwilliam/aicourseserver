@@ -1940,7 +1940,22 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+    res.status(200).json({ 
+        success: true, 
+        message: 'Server is working' 
+    });
+});
 
+
+// Health check endpoint
+app.get('/', (req, res) => {
+    res.status(200).json({ 
+        success: true, 
+        message: 'Server is working' 
+    });
+});
 //LISTEN
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
